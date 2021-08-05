@@ -16,7 +16,7 @@ output:
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
   echo=TRUE, message=FALSE, warning=FALSE,
-  class.source="language-r", attr.output="language-r"
+  class.source="language-r", class.output="language-r"
 )
 ```
 
@@ -77,3 +77,13 @@ Check that math still works: $\mathbb{Z}/2\mathbb{Z}$
 x, & x \geq 0\\
 -x & x < 0
 \end{cases}\]
+
+An arbitrary fenced code block:
+
+```
+if (x > 5) {
+  func1(...)
+} else {
+  func2(...)
+}
+```

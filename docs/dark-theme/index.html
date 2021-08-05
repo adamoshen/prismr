@@ -172,7 +172,7 @@ theme_set(theme_bw())</code></pre>
   drop_na()
 
 glimpse(penguins)</code></pre>
-<pre class="{language-r}"><code>## Rows: 333
+<pre class="language-r"><code>## Rows: 333
 ## Columns: 8
 ## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel~
 ## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse~
@@ -190,7 +190,7 @@ glimpse(penguins)</code></pre>
   select(species, island, bill_length_mm, contains(&quot;diff&quot;))
 
 new_peng</code></pre>
-<pre class="{language-r}"><code>## # A tibble: 333 x 5
+<pre class="language-r"><code>## # A tibble: 333 x 5
 ##    species island    bill_length_mm diff1   diff2
 ##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
 ##  1 Adelie  Torgersen           39.1 -4.89  0.0617
@@ -226,6 +226,12 @@ TRUE FALSE NA NULL
 x, &amp; x \geq 0\\
 -x &amp; x &lt; 0
 \end{cases}\]</span></p>
+<p>An arbitrary fenced code block:</p>
+<pre><code>if (x &gt; 5) {
+  func1(...)
+} else {
+  func2(...)
+}</code></pre>
 </div>
 
 
