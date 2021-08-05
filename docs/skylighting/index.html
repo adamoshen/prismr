@@ -256,16 +256,16 @@ pre code {
 
 <div id="packages" class="section level1">
 <h1>Packages</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r language-r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())</span></code></pre></div>
 </div>
 <div id="penguins-data" class="section level1">
 <h1>Penguins data</h1>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r language-r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> palmerpenguins<span class="sc">::</span>penguins <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> palmerpenguins<span class="sc">::</span>penguins <span class="sc">%&gt;%</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(penguins)</span></code></pre></div>
-<pre class="{language-r}"><code>## Rows: 333
+<pre><code>## Rows: 333
 ## Columns: 8
 ## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel~
 ## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse~
@@ -275,7 +275,7 @@ pre code {
 ## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, 3450, 3650, 3625, 4675, 3200, 3800~
 ## $ sex               &lt;fct&gt; male, female, female, female, male, female, male, fe~
 ## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007~</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r language-r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>new_peng <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>new_peng <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">diff1 =</span> bill_length_mm <span class="sc">-</span> <span class="fu">mean</span>(bill_length_mm)) <span class="sc">%&gt;%</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, island) <span class="sc">%&gt;%</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">diff2 =</span> bill_length_mm <span class="sc">-</span> <span class="fu">mean</span>(bill_length_mm)) <span class="sc">%&gt;%</span></span>
@@ -283,7 +283,7 @@ pre code {
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species, island, bill_length_mm, <span class="fu">contains</span>(<span class="st">&quot;diff&quot;</span>))</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>new_peng</span></code></pre></div>
-<pre class="{language-r}"><code>## # A tibble: 333 x 5
+<pre><code>## # A tibble: 333 x 5
 ##    species island    bill_length_mm diff1   diff2
 ##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
 ##  1 Adelie  Torgersen           39.1 -4.89  0.0617
@@ -297,9 +297,9 @@ pre code {
 ##  9 Adelie  Torgersen           38.6 -5.39 -0.438 
 ## 10 Adelie  Torgersen           34.6 -9.39 -4.44  
 ## # ... with 323 more rows</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r language-r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment though</span></span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment though</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="do">## This isn&#39;t a comment</span></span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r language-r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x=</span>bill_length_mm, <span class="at">y=</span>bill_depth_mm)) <span class="sc">+</span></span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x=</span>bill_length_mm, <span class="at">y=</span>bill_depth_mm)) <span class="sc">+</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour=</span>species)) <span class="sc">+</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species, <span class="at">nrow=</span><span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Bill length (mm)&quot;</span>, <span class="at">y=</span><span class="st">&quot;Bill depth (mm)&quot;</span>)</span></code></pre></div>
@@ -307,7 +307,7 @@ pre code {
 </div>
 <div id="everything-else" class="section level1">
 <h1>Everything else</h1>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r language-r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This chunk starts with a comment</span></span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This chunk starts with a comment</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="cf">else</span> <span class="cf">while</span> <span class="cf">for</span> </span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="cn">FALSE</span> <span class="cn">NA</span> <span class="cn">NULL</span></span>
