@@ -72,5 +72,15 @@ Check that math still works: $\mathbb{Z}/2\mathbb{Z}$
 
 \[f(x) \,=\, \begin{cases}
 x, & x \geq 0\\
--x & x < 0
+-x, & x < 0
 \end{cases}\]
+
+An arbitrary fenced code block:
+
+```
+if (x > 5) {
+  func1(...)
+} else {
+  func2(...)
+}
+```
