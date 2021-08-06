@@ -1,5 +1,5 @@
 
-# `prismr`: PrismJS for RMarkdown HTML
+# prismr: PrismJS for RMarkdown HTML
 
 ## Demos:
 
