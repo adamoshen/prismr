@@ -1237,14 +1237,14 @@ Prism.languages.r = {
 		pattern: /(?:[A-Za-z\._][\w\.]*)(?=\()/,
 		greedy: true
 	},
-	'package': /[\D][\w\.]*(?=:::?)/,
+	'namespace': /[\D][\w\.]*(?=:::?)/,
 	'percent-operator': {
 		// Includes user-defined operators
 		// and %%, %*%, %/%, %in%, %o%, %x%
 		pattern: /%[^%\s]*%/,
 		alias: 'operator'
 	},
-	'boolean': /\b(?:TRUE|FALSE)\b/,
+	'boolean': /\b(?:TRUE|FALSE|T|F)\b/,
 	'ellipsis': /\.\.(?:\.|\d+)/,
 	'number': [
 		/\b(?:NaN|Inf)\b/,
@@ -1255,4 +1255,3 @@ Prism.languages.r = {
 	'operator': /->?>?|<(?:=|<?-)?|[>=!]=?|::?|&&?|\|\|?|[+*\/^$@~]/,
 	'punctuation': /[(){}\[\],;]/
 };
-
