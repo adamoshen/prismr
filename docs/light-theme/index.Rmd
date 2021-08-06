@@ -1,0 +1,79 @@
+---
+title: "Using PrismJS with RMarkdown"
+subtitle: "Highlight theme: Adam Light"
+author: "Adam Shen"
+output:
+  html_document:
+    self_contained: true
+    highlight: null
+    theme: cosmo
+    css: css/adam-light.css
+    includes:
+      in_header: utils/header.html
+    md_extensions: "-smart"
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  echo=TRUE, message=FALSE, warning=FALSE,
+  class.source="language-r", class.output="language-r"
+)
+```
+
+# Packages
+
+```{r}
+library(tidyverse)
+theme_set(theme_bw())
+```
+
+# Penguins data
+
+```{r}
+penguins <- palmerpenguins::penguins %>%
+  drop_na()
+
+glimpse(penguins)
+```
+
+```{r}
+new_peng <- penguins %>%
+  mutate(diff1 = bill_length_mm - mean(bill_length_mm)) %>%
+  group_by(species, island) %>%
+  mutate(diff2 = bill_length_mm - mean(bill_length_mm)) %>%
+  ungroup() %>%
+  select(species, island, bill_length_mm, contains("diff"))
+
+new_peng
+```
+
+```{r}
+# This is a comment though
+## This isn't a comment
+```
+
+```{r, fig.width=12}
+ggplot(penguins, aes(x=bill_length_mm, y=bill_depth_mm)) +
+  geom_point(aes(colour=species)) +
+  facet_wrap(~species, nrow=1) +
+  labs(x="Bill length (mm)", y="Bill depth (mm)")
+```
+
+# Everything else
+
+```{r, eval=FALSE}
+# This chunk starts with a comment
+
+if else while for 
+TRUE FALSE NA NULL
+
+# Quoted variables:
+`s2@_df` <- 3
+```
+
+Check that math still works: $\mathbb{Z}/2\mathbb{Z}$
+
+\[f(x) \,=\, \begin{cases}
+x, & x \geq 0\\
+-x & x < 0
+\end{cases}\]
