@@ -1223,12 +1223,11 @@ if (typeof global !== 'undefined') {
  */
 ;
 Prism.languages.r = {
-	'comment': {
-		pattern: /(?:#[^#\n]*)(?!#)/
-	},
 	'output': {
 		pattern: /#(?=#)/,
-		greedy: true
+	},
+	'comment': {
+		pattern: /(?:#[^#\n]*)/,
 	},
 	'string': {
 		pattern: /(['"])(?:\\.|(?!\1)[^\\\r\n])*\1/,
