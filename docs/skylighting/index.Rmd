@@ -13,7 +13,8 @@ output:
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
-  echo=TRUE, message=FALSE, warning=FALSE
+  echo=TRUE, message=FALSE, warning=FALSE,
+  class.output="r"
 )
 ```
 
