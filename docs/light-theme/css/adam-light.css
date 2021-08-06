@@ -115,6 +115,7 @@ pre[class*="language-"] {
 .token.output,
 .token.operator {
 	color: var(--maroon);
+	font-weight: bold;
 }
 
 .token.entity {
