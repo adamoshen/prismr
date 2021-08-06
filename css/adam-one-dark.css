@@ -60,8 +60,9 @@ pre[class*="language-"] {
 	color: var(--text-col);
 }
 
-.namespace {
-	opacity: .7;
+.token.namespace {
+	color: var(--purple);
+	font-style: italic;
 }
 
 .token.property,
@@ -99,11 +100,6 @@ pre[class*="language-"] {
 .token.builtin,
 .token.inserted {
 	color: var(--purple);
-}
-
-.token.package {
-	color: var(--purple);
-	font-style: italic;
 }
 
 .token.variable {
