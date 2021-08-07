@@ -22,10 +22,10 @@ through trial and error in order to:
 While this manually-edited highlight theme worked well for PDF output,
 it did not work so well for HTML output. To use this custom highlight theme
 with RMarkdown in RStudio, I had to "trick" RMarkdown/Pandoc into thinking that
-I was using a custom template file (despite using one that was identical to
-the default template). It was in this manner that Pandoc was able to accept
-the custom highlight theme. However, in doing so, MathJax ends up getting
-disabled when trying to create self-contained HTML output.
+I was using a custom template file, despite using one that was identical to
+the default template. It was in this manner that RMarkdown was able to accept
+the custom highlight theme and pass it to Pandoc. However, in doing so, MathJax
+ended up getting disabled when trying to create self-contained HTML output.
 
 After playing around a bit with blogdown, Hugo, and highlightJS on my personal
 website, I was impressed with how beautiful things could be when Skylighting
