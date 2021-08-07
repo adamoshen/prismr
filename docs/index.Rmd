@@ -1,6 +1,8 @@
 ---
 output:
   github_document:
+    includes:
+      in_header: header.html
     md_extensions: "-smart"
     keep_html: true
 ---
@@ -24,3 +26,4 @@ output:
 [Adam One Dark](dark-theme/)
 
 [Adam Light](light-theme/)
+
