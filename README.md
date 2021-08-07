@@ -83,7 +83,8 @@ output:
 ```
 
 As this is based on `rmarkdown::html_document()`, it naturally supports all
-the usual arguments (including MathJax!).
+the usual arguments (including MathJax!). This implementation is also
+compatible with `bookdown::html_document2()`.
 
 ### Knitr setup chunk
 
