@@ -82,9 +82,13 @@ output:
 ---
 ```
 
-As this is based on `rmarkdown::html_document()`, it naturally supports all
-the usual arguments (including MathJax!). This implementation is also
-compatible with `bookdown::html_document2()`.
+This configuration is compatible with:
+
+- `rmarkdown::html_document`
+- `bookdown::html_document2`
+- `bookdown::gitbook`
+
+This configuration is *not* compatible with `xaringan::moon_reader`.
 
 ### Knitr setup chunk
 
