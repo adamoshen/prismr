@@ -1227,7 +1227,7 @@ Prism.languages.r = {
 		pattern: /#(?=#)/,
 	},
 	'comment': {
-		pattern: /(?:#[^#\n]*)/,
+		pattern: /#[^#\n]*/,
 	},
 	'string': {
 		pattern: /(['"])(?:\\.|(?!\1)[^\\\r\n])*\1/,
