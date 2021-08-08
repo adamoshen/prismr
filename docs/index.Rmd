@@ -27,3 +27,4 @@ output:
 
 [Adam Light](light-theme/)
 
+[Dracula](dracula-theme/)

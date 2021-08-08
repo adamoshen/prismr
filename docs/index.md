@@ -19,3 +19,5 @@
 [Adam One Dark](dark-theme/)
 
 [Adam Light](light-theme/)
+
+[Dracula](dracula-theme/)
