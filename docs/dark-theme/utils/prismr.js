@@ -1237,7 +1237,7 @@ Prism.languages.r = {
 		pattern: /(?:[A-Za-z\._][\w\.]*)(?=\()/,
 		greedy: true
 	},
-	'namespace': /[\D][\w\.]*(?=:::?)/,
+	'namespace': /[A-Za-z][\w\.]*(?=:::?)/,
 	'percent-operator': {
 		// Includes user-defined operators
 		// and %%, %*%, %/%, %in%, %o%, %x%
