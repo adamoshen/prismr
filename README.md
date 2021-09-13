@@ -88,7 +88,10 @@ This configuration is compatible with:
 - `bookdown::html_document2`
 - `bookdown::gitbook`
 
-This configuration is *not* compatible with `xaringan::moon_reader`.
+This configuration is *not* compatible with:
+
+- `bookdown::bs4_book`
+- `xaringan::moon_reader`
 
 ### Knitr setup chunk
 
