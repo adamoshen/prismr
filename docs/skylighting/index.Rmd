@@ -4,7 +4,6 @@ subtitle: "Highlight theme: Tango"
 author: "Adam Shen"
 output:
   html_document:
-    self_contained: true
     highlight: tango
     theme: flatly
     css: css/regular.css
@@ -14,7 +13,7 @@ output:
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
   echo=TRUE, message=FALSE, warning=FALSE,
-  class.output="r"
+  class.output="r", fig.align="center", dev="svglite"
 )
 ```
 

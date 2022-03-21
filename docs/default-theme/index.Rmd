@@ -4,7 +4,6 @@ subtitle: "Highlight theme: Prism Default"
 author: "Adam Shen"
 output:
   html_document:
-    self_contained: true
     highlight: null
     theme: flatly
     css: css/prism.css
@@ -16,7 +15,8 @@ output:
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
   echo=TRUE, message=FALSE, warning=FALSE,
-  class.source="language-r", class.output="language-r"
+  class.source="language-r", class.output="language-r",
+  fig.align="center", dev="svglite"
 )
 ```
 
