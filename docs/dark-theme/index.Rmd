@@ -29,10 +29,11 @@ library(tidyverse)
 
 new_penguins <- palmerpenguins::penguins %>%
   drop_na() %>%
-  mutate(var1 = mean(bill_length_mm)) %>%
+  mutate(bill_length_mean1 = mean(bill_length_mm)) %>%
   group_by(species, island) %>%
-  mutate(var2 = mean(bill_length_mm)) %>%
-  ungroup()
+  mutate(bill_length_mean2 = mean(bill_length_mm)) %>%
+  ungroup() %>%
+  select(species, island, contains("bill_length"))
 
 new_penguins
 ```

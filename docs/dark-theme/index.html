@@ -1625,27 +1625,27 @@ pre code {
 
 new_penguins &lt;- palmerpenguins::penguins %&gt;%
   drop_na() %&gt;%
-  mutate(var1 = mean(bill_length_mm)) %&gt;%
+  mutate(bill_length_mean1 = mean(bill_length_mm)) %&gt;%
   group_by(species, island) %&gt;%
-  mutate(var2 = mean(bill_length_mm)) %&gt;%
-  ungroup()
+  mutate(bill_length_mean2 = mean(bill_length_mm)) %&gt;%
+  ungroup() %&gt;%
+  select(species, island, contains(&quot;bill_length&quot;))
 
 new_penguins</code></pre>
-<pre class="language-r"><code>## # A tibble: 333 x 10
-##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
-##  1 Adelie  Torgersen           39.1          18.7               181        3750
-##  2 Adelie  Torgersen           39.5          17.4               186        3800
-##  3 Adelie  Torgersen           40.3          18                 195        3250
-##  4 Adelie  Torgersen           36.7          19.3               193        3450
-##  5 Adelie  Torgersen           39.3          20.6               190        3650
-##  6 Adelie  Torgersen           38.9          17.8               181        3625
-##  7 Adelie  Torgersen           39.2          19.6               195        4675
-##  8 Adelie  Torgersen           41.1          17.6               182        3200
-##  9 Adelie  Torgersen           38.6          21.2               191        3800
-## 10 Adelie  Torgersen           34.6          21.1               198        4400
-## # ... with 323 more rows, and 4 more variables: sex &lt;fct&gt;, year &lt;int&gt;,
-## #   var1 &lt;dbl&gt;, var2 &lt;dbl&gt;</code></pre>
+<pre class="language-r"><code>## # A tibble: 333 x 5
+##    species island    bill_length_mm bill_length_mean1 bill_length_mean2
+##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;             &lt;dbl&gt;             &lt;dbl&gt;
+##  1 Adelie  Torgersen           39.1              44.0              39.0
+##  2 Adelie  Torgersen           39.5              44.0              39.0
+##  3 Adelie  Torgersen           40.3              44.0              39.0
+##  4 Adelie  Torgersen           36.7              44.0              39.0
+##  5 Adelie  Torgersen           39.3              44.0              39.0
+##  6 Adelie  Torgersen           38.9              44.0              39.0
+##  7 Adelie  Torgersen           39.2              44.0              39.0
+##  8 Adelie  Torgersen           41.1              44.0              39.0
+##  9 Adelie  Torgersen           38.6              44.0              39.0
+## 10 Adelie  Torgersen           34.6              44.0              39.0
+## # ... with 323 more rows</code></pre>
 </div>
 <div id="flower-sales-data" class="section level1">
 <h1>Flower sales data</h1>
