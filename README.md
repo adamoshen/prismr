@@ -1,13 +1,25 @@
 # prismr: PrismJS for RMarkdown HTML (and `xaringan`)
 
+## What's different about `prismr.js` compared to the default `prism.js`?
+
+1. The langauge definitions for `R` found in `prismr.js` are different than those found in the
+default `prism.js`.
+
+2. The css files included in this repo have additional token definitions in order to accomodate
+these additional language definitions.
+
+For usage with `xaringan`, if you are downloading `prism.js` directly from the
+[PrismJS](https://prismjs.com/download.html) website, the "Keep Markup" plugin needs to be
+checked off.
+
 ## Minimum requirements
 
 - rmarkdown (obviously)
 - knitr (>= 1.16)
 
-## Usage - HTML documents
+# Usage - HTML documents
 
-### Recommended workflow
+## Recommended workflow
 
 ```shell
 .
@@ -20,7 +32,7 @@
 └── index.Rmd
 ```
 
-### Minimal YAML header
+## Minimal YAML header
 
 ```yaml
 output:
@@ -41,7 +53,7 @@ This configuration is *not* compatible with:
 
 - `bookdown::bs4_book`
 
-### Knitr setup chunk
+## Knitr setup chunk
 
 The following code should be included in the setup code chunk at the beginning of your `.Rmd` file:
 
@@ -71,24 +83,29 @@ the definitions supplied in `utils/prismr.js`. Hightlighting can be disabled on
 a per-chunk basis by supplying the chunk options
 `class.source="language-none"` or `class.output="language-none"`.
 
-## Usage - `xaringan` slides
+# Usage - `xaringan` slides
 
-The `prismr.js` and corresponding css files can be included as above, or via
-`htmltools::tagList` and `htmltools::htmlDependency` as shown in the example
-[here](https://github.com/adamoshen/prismr/blob/main/docs/xaringan/index.Rmd).
-The `highlightStyle` should also be set to `null` to disable highlighting via
+[Example code](https://github.com/adamoshen/prismr/blob/main/docs/xaringan/index.Rmd)
+
+- [x] The `prismr.js` and corresponding css files are included using the setup
+above, or via `htmltools::tagList` and `htmltools::htmlDependency` as shown in
+the example.
+
+- [x] The `highlightStyle` is set to `null` to disable highlighting via
 `highlight.js`.
 
-Highlighting is enabled on a per-slide basis by adding `language-*` to the slide
+- [x] Highlighting is enabled on a per-slide basis by adding `language-*` to the slide
 class, e.g. `class: center, inverse, language-r`.
+
+- [x] `knitr` chunk options `class.source` and `class.output` do not need to be
+modified.
 
 It should be noted that the monospace font is defined once in the corresponding
 Prism css file, and once again in the presentation css file. In the included example,
 the font definition in the Prism css file takes precendence, so this should either
 be removed or modified to match the monospace font defined for the presentation.
 
-
-## Support for other languages
+# Support for other languages
 
 As PrismJS supports many languages, the `utils/prismr.js` file can be modified
 by appending the contents of the auto-generated `.js` file from the
@@ -100,7 +117,7 @@ As Python is now supported by `rmarkdown` and `knitr` via the `reticulate`
 package, highlighting of Python source chunks can be accomplished by setting the
 chunk (or global) option, `class.source="language-python"`.
 
-## Additional themes
+# Additional themes
 
 Additional themes can be obtained from
 [PrismJS/prism-themes](https://github.com/PrismJS/prism-themes). To ensure
@@ -111,7 +128,7 @@ token `'output'`, which corresponds to `.token.output` in the `.css` file.
 
 You can also build your own theme by modifying the included `.css` files.
 
-## Session info
+# Session info
 
 - RStudio 2022.02.3+492 (Prairie Trillium)
     - rmarkdown 2.14
