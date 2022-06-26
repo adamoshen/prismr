@@ -14,7 +14,7 @@
 
 [PrismJS default theme](default-theme/)
 
-### Custom PrismJS for RMarkdown HTML
+### Custom PrismJS themes for RMarkdown HTML
 
 [Adam One Dark](dark-theme/)
 
@@ -22,6 +22,6 @@
 
 [Dracula](dracula-theme/)
 
-### Custom PrismJS for Remark.js slides
+### Custom PrismJS themes for `xaringan` slides
 
 [Adam One Dark](xaringan/)
