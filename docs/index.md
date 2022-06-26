@@ -21,3 +21,7 @@
 [Adam Light](light-theme/)
 
 [Dracula](dracula-theme/)
+
+### Custom PrismJS for Remark.js slides
+
+[Adam One Dark](xaringan/)
