@@ -81,8 +81,8 @@ Highlighting is enabled on a per-slide basis by adding `language-*` to the slide
 class, e.g. `class: center, inverse, language-r`.
 
 It should be noted that the monospace font is defined once in the corresponding
-prism css file, and once again the presentation css file. In the included example,
-the font definition in the prism css file takes precendence, so this should either
+Prism css file, and once again in the presentation css file. In the included example,
+the font definition in the Prism css file takes precendence, so this should either
 be removed or modified to match the monospace font defined for the presentation.
 
 
