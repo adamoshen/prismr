@@ -1,0 +1,59 @@
+---
+title: "This is a title"
+author: "Adam Shen"
+output:
+  xaringan::moon_reader:
+    seal: false
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js
+    css: css/xaringan-themer.css
+    mathjax: null
+    nature:
+      highlightStyle: null
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, message=FALSE, warning=FALSE)
+
+htmltools::tagList(
+  htmltools::htmlDependency(
+    name = "prismr",
+    version = "1.28.0",
+    src = "libs/prismr",
+    script = "prismr.js",
+    stylesheet = "adam-one-dark.css"
+  )
+)
+```
+
+class: title-slide, center
+
+# This is the title slide
+
+## Some subtitle
+
+By: Adam Shen
+
+---
+
+class: language-r
+
+# Example code and output
+
+```{r}
+library(tidyverse)
+
+new_penguins <- palmerpenguins::penguins %>%
+  drop_na() %>%
+  mutate(bill_length_mean1 = mean(bill_length_mm)) %>%
+  group_by(species, island) %>%
+  mutate(bill_length_mean2 = mean(bill_length_mm)) %>%
+  ungroup() %>%
+  select(species, island, contains("bill_length"))
+
+new_penguins
+```
+
