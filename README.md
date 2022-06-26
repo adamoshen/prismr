@@ -71,11 +71,13 @@ the definitions supplied in `utils/prismr.js`. Hightlighting can be disabled on
 a per-chunk basis by supplying the chunk options
 `class.source="language-none"` or `class.output="language-none"`.
 
-## Usage - Xaringan slides
+## Usage - `xaringan` slides
 
 The `prismr.js` and corresponding css files can be included as above, or via
 `htmltools::tagList` and `htmltools::htmlDependency` as shown in the example
 [here](https://github.com/adamoshen/prismr/blob/main/docs/xaringan/index.Rmd).
+The `highlightStyle` should also be set to `null` to disable highlighting via
+`highlight.js`.
 
 Highlighting is enabled on a per-slide basis by adding `language-*` to the slide
 class, e.g. `class: center, inverse, language-r`.
