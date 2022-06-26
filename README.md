@@ -5,17 +5,17 @@
 - rmarkdown (obviously)
 - knitr (>= 1.16)
 
-## Usage
+## Usage - HTML documents
 
 ### Recommended workflow
 
 ```shell
 .
 ├── css
-│   └── adam-one-dark.css
+│   └── adam-one-dark.css
 ├── utils
-│   ├── header.html
-│   └── prismr.js
+│   ├── header.html
+│   └── prismr.js
 ├── index.html
 └── index.Rmd
 ```
@@ -40,12 +40,10 @@ This configuration is compatible with:
 This configuration is *not* compatible with:
 
 - `bookdown::bs4_book`
-- `xaringan::moon_reader`
 
 ### Knitr setup chunk
 
-The following code should be included in the setup code chunk at the beginning
-of your `.Rmd` file:
+The following code should be included in the setup code chunk at the beginning of your `.Rmd` file:
 
 ```r
 knitr::opts$chunk_set(class.source="language-r", class.output="language-r")
@@ -73,6 +71,21 @@ the definitions supplied in `utils/prismr.js`. Hightlighting can be disabled on
 a per-chunk basis by supplying the chunk options
 `class.source="language-none"` or `class.output="language-none"`.
 
+## Usage - Xaringan slides
+
+The `prismr.js` and corresponding css files can be included as above, or via
+`htmltools::tagList` and `htmltools::htmlDependency` as shown in the example
+[here](https://github.com/adamoshen/prismr/blob/main/docs/xaringan/index.Rmd).
+
+Highlighting is enabled on a per-slide basis by adding `language-*` to the slide
+class, e.g. `class: center, inverse, language-r`.
+
+It should be noted that the monospace font is defined once in the corresponding
+prism css file, and once again the presentation css file. In the included example,
+the font definition in the prism css file takes precendence, so this should either
+be removed or modified to match the monospace font defined for the presentation.
+
+
 ## Support for other languages
 
 As PrismJS supports many languages, the `utils/prismr.js` file can be modified
@@ -98,8 +111,9 @@ You can also build your own theme by modifying the included `.css` files.
 
 ## Session info
 
-- RStudio 1.4.1106
-    - rmarkdown 2.9
-    - knitr 1.31
+- RStudio 2022.02.3+492 (Prairie Trillium)
+    - rmarkdown 2.14
+    - knitr 1.39
+    - xaringan 0.24
 - Pandoc 2.14.1 (a separate installation)
     - Skylighting 0.11 (included in installation)
