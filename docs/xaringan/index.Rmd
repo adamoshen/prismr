@@ -27,6 +27,27 @@ htmltools::tagList(
     stylesheet = "adam-one-dark.css"
   )
 )
+
+old_hooks <- fansi::set_knit_hooks(knitr::knit_hooks)
+
+styles <- c(
+  getOption('fansi.style'),  # default style
+  "PRE.fansi CODE {background-color: transparent;}",
+  "PRE.fansi-error {background-color: transparent;}",
+  "PRE.fansi-warning {background-color: transparent;}",
+  "PRE.fansi-message {background-color: transparent;}"
+)
+
+old.hooks <- c(
+  old_hooks,
+  fansi::set_knit_hooks(
+    knitr::knit_hooks,
+    which=c('warning', 'error', 'message'),
+    style=styles
+  )
+)
+
+options(crayon.enabled=TRUE)
 ```
 
 class: title-slide, center
@@ -41,11 +62,19 @@ By: Adam Shen
 
 class: language-r
 
+# PrismJS works with `fansi` knit hooks
+
+```{r, message=TRUE}
+library(tidyverse)
+```
+
+---
+
+class: language-r
+
 # Example code and output
 
 ```{r}
-library(tidyverse)
-
 new_penguins <- palmerpenguins::penguins %>%
   drop_na() %>%
   mutate(bill_length_mean1 = mean(bill_length_mm)) %>%

@@ -27,12 +27,31 @@ By: Adam Shen
 
 class: language-r
 
-# Example code and output
+# PrismJS works with `fansi` knit hooks
 
 
 ```r
 library(tidyverse)
+```
 
+&lt;PRE class="fansi fansi-message"&gt;&lt;CODE&gt;## -- &lt;span style='font-weight: bold;'&gt;Attaching packages&lt;/span&gt; --------------------------------------- tidyverse 1.3.1 --
+&lt;/CODE&gt;&lt;/PRE&gt;&lt;PRE class="fansi fansi-message"&gt;&lt;CODE&gt;## &lt;span style='color: #00BB00;'&gt;v&lt;/span&gt; &lt;span style='color: #0000BB;'&gt;ggplot2&lt;/span&gt; 3.3.6     &lt;span style='color: #00BB00;'&gt;v&lt;/span&gt; &lt;span style='color: #0000BB;'&gt;purrr  &lt;/span&gt; 0.3.4
+## &lt;span style='color: #00BB00;'&gt;v&lt;/span&gt; &lt;span style='color: #0000BB;'&gt;tibble &lt;/span&gt; 3.1.6     &lt;span style='color: #00BB00;'&gt;v&lt;/span&gt; &lt;span style='color: #0000BB;'&gt;dplyr  &lt;/span&gt; 1.0.9
+## &lt;span style='color: #00BB00;'&gt;v&lt;/span&gt; &lt;span style='color: #0000BB;'&gt;tidyr  &lt;/span&gt; 1.2.0     &lt;span style='color: #00BB00;'&gt;v&lt;/span&gt; &lt;span style='color: #0000BB;'&gt;stringr&lt;/span&gt; 1.4.0
+## &lt;span style='color: #00BB00;'&gt;v&lt;/span&gt; &lt;span style='color: #0000BB;'&gt;readr  &lt;/span&gt; 2.1.2     &lt;span style='color: #00BB00;'&gt;v&lt;/span&gt; &lt;span style='color: #0000BB;'&gt;forcats&lt;/span&gt; 0.5.1
+&lt;/CODE&gt;&lt;/PRE&gt;&lt;PRE class="fansi fansi-message"&gt;&lt;CODE&gt;## -- &lt;span style='font-weight: bold;'&gt;Conflicts&lt;/span&gt; ------------------------------------------ tidyverse_conflicts() --
+## &lt;span style='color: #BB0000;'&gt;x&lt;/span&gt; &lt;span style='color: #0000BB;'&gt;dplyr&lt;/span&gt;::&lt;span style='color: #00BB00;'&gt;filter()&lt;/span&gt; masks &lt;span style='color: #0000BB;'&gt;stats&lt;/span&gt;::filter()
+## &lt;span style='color: #BB0000;'&gt;x&lt;/span&gt; &lt;span style='color: #0000BB;'&gt;dplyr&lt;/span&gt;::&lt;span style='color: #00BB00;'&gt;lag()&lt;/span&gt;    masks &lt;span style='color: #0000BB;'&gt;stats&lt;/span&gt;::lag()
+&lt;/CODE&gt;&lt;/PRE&gt;
+
+---
+
+class: language-r
+
+# Example code and output
+
+
+```r
 new_penguins &lt;- palmerpenguins::penguins %&gt;%
   drop_na() %&gt;%
   mutate(bill_length_mean1 = mean(bill_length_mm)) %&gt;%
@@ -44,22 +63,21 @@ new_penguins &lt;- palmerpenguins::penguins %&gt;%
 new_penguins
 ```
 
-```
-## # A tibble: 333 x 5
+&lt;PRE class="fansi fansi-output"&gt;&lt;CODE&gt;## &lt;span style='color: #555555;'&gt;# A tibble: 333 x 5&lt;/span&gt;
 ##    species island    bill_length_mm bill_length_mean1 bill_length_mean2
-##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;             &lt;dbl&gt;             &lt;dbl&gt;
-##  1 Adelie  Torgersen           39.1              44.0              39.0
-##  2 Adelie  Torgersen           39.5              44.0              39.0
-##  3 Adelie  Torgersen           40.3              44.0              39.0
-##  4 Adelie  Torgersen           36.7              44.0              39.0
-##  5 Adelie  Torgersen           39.3              44.0              39.0
-##  6 Adelie  Torgersen           38.9              44.0              39.0
-##  7 Adelie  Torgersen           39.2              44.0              39.0
-##  8 Adelie  Torgersen           41.1              44.0              39.0
-##  9 Adelie  Torgersen           38.6              44.0              39.0
-## 10 Adelie  Torgersen           34.6              44.0              39.0
-## # ... with 323 more rows
-```
+##    &lt;span style='color: #555555; font-style: italic;'&gt;&amp;lt;fct&amp;gt;&lt;/span&gt;   &lt;span style='color: #555555; font-style: italic;'&gt;&amp;lt;fct&amp;gt;&lt;/span&gt;              &lt;span style='color: #555555; font-style: italic;'&gt;&amp;lt;dbl&amp;gt;&lt;/span&gt;             &lt;span style='color: #555555; font-style: italic;'&gt;&amp;lt;dbl&amp;gt;&lt;/span&gt;             &lt;span style='color: #555555; font-style: italic;'&gt;&amp;lt;dbl&amp;gt;&lt;/span&gt;
+## &lt;span style='color: #555555;'&gt; 1&lt;/span&gt; Adelie  Torgersen           39.1              44.0              39.0
+## &lt;span style='color: #555555;'&gt; 2&lt;/span&gt; Adelie  Torgersen           39.5              44.0              39.0
+## &lt;span style='color: #555555;'&gt; 3&lt;/span&gt; Adelie  Torgersen           40.3              44.0              39.0
+## &lt;span style='color: #555555;'&gt; 4&lt;/span&gt; Adelie  Torgersen           36.7              44.0              39.0
+## &lt;span style='color: #555555;'&gt; 5&lt;/span&gt; Adelie  Torgersen           39.3              44.0              39.0
+## &lt;span style='color: #555555;'&gt; 6&lt;/span&gt; Adelie  Torgersen           38.9              44.0              39.0
+## &lt;span style='color: #555555;'&gt; 7&lt;/span&gt; Adelie  Torgersen           39.2              44.0              39.0
+## &lt;span style='color: #555555;'&gt; 8&lt;/span&gt; Adelie  Torgersen           41.1              44.0              39.0
+## &lt;span style='color: #555555;'&gt; 9&lt;/span&gt; Adelie  Torgersen           38.6              44.0              39.0
+## &lt;span style='color: #555555;'&gt;10&lt;/span&gt; Adelie  Torgersen           34.6              44.0              39.0
+## &lt;span style='color: #555555;'&gt;# ... with 323 more rows&lt;/span&gt;
+&lt;/CODE&gt;&lt;/PRE&gt;
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
