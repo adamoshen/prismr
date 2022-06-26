@@ -1265,40 +1265,6 @@ if (typeof global !== 'undefined') {
  */
 ;
 
-Prism.languages.r = {
-	'output': {
-		pattern: /#(?=#)/,
-	},
-	'comment': {
-		pattern: /#[^#\n]*/,
-	},
-	'string': {
-		pattern: /(['"])(?:\\.|(?!\1)[^\\\r\n])*\1/,
-		greedy: true
-	},
-	'function': {
-		pattern: /(?:[A-Za-z\._][\w\.]*)(?=\()/,
-		greedy: true
-	},
-	'namespace': /[A-Za-z][\w\.]*(?=:::?)/,
-	'percent-operator': {
-		// Includes user-defined operators
-		// and %%, %*%, %/%, %in%, %o%, %x%
-		pattern: /%[^%\s]*%/,
-		alias: 'operator'
-	},
-	'boolean': /\b(?:TRUE|FALSE|T|F)\b/,
-	'ellipsis': /\.\.(?:\.|\d+)/,
-	'number': [
-		/\b(?:NaN|Inf)\b/,
-		/(?:\b0x[\dA-Fa-f]+(?:\.\d*)?|\b\d+(?:\.\d*)?|\B\.\d+)(?:[EePp][+-]?\d+)?[iL]?/
-	],
-	'keyword': /\b(?:if|else|repeat|while|function|for|in|next|break)\b/,
-	'constant': /\b(?:NULL|NA|NA_integer_|NA_real_|NA_complex_|NA_character_)\b/,
-	'operator': /->?>?|<(?:=|<?-)?|[>=!]=?|::?|&&?|\|\|?|[+*\/^$@~]/,
-	'punctuation': /[(){}\[\],;]/
-};
-
 (function () {
 
 	if (typeof Prism === 'undefined' || typeof document === 'undefined' || !document.createRange) {
@@ -1426,3 +1392,36 @@ Prism.languages.r = {
 	});
 }());
 
+Prism.languages.r = {
+	'output': {
+		pattern: /#(?=#)/,
+	},
+	'comment': {
+		pattern: /#[^#\n]*/,
+	},
+	'string': {
+		pattern: /(['"])(?:\\.|(?!\1)[^\\\r\n])*\1/,
+		greedy: true
+	},
+	'function': {
+		pattern: /(?:[A-Za-z\._][\w\.]*)(?=\()/,
+		greedy: true
+	},
+	'namespace': /[A-Za-z][\w\.]*(?=:::?)/,
+	'percent-operator': {
+		// Includes user-defined operators
+		// and %%, %*%, %/%, %in%, %o%, %x%
+		pattern: /%[^%\s]*%/,
+		alias: 'operator'
+	},
+	'boolean': /\b(?:TRUE|FALSE|T|F)\b/,
+	'ellipsis': /\.\.(?:\.|\d+)/,
+	'number': [
+		/\b(?:NaN|Inf)\b/,
+		/(?:\b0x[\dA-Fa-f]+(?:\.\d*)?|\b\d+(?:\.\d*)?|\B\.\d+)(?:[EePp][+-]?\d+)?[iL]?/
+	],
+	'keyword': /\b(?:if|else|repeat|while|function|for|in|next|break)\b/,
+	'constant': /\b(?:NULL|NA|NA_integer_|NA_real_|NA_complex_|NA_character_)\b/,
+	'operator': /->?>?|<(?:=|<?-)?|[>=!]=?|::?|&&?|\|\|?|[+*\/^$@~]/,
+	'punctuation': /[(){}\[\],;]/
+};
