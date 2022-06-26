@@ -1,4 +1,4 @@
-# prismr: PrismJS for RMarkdown HTML
+# prismr: PrismJS for RMarkdown HTML (and `xaringan`)
 
 ## Minimum requirements
 
