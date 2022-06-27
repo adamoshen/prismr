@@ -18,6 +18,8 @@
 
 [Adam One Dark](dark-theme/)
 
+[Adam One Dark with fansi knit hooks](dark-theme-fansi/)
+
 [Adam Light](light-theme/)
 
 [Dracula](dracula-theme/)
