@@ -85,6 +85,8 @@ a per-chunk basis by supplying the chunk options
 
 ## Usage with `fansi` knit hooks
 
+[Example code](https://github.com/adamoshen/prismr/blob/main/docs/light-theme-fansi/index.Rmd)
+
 To allow both `prismr` and `fansi` to highlight in chunk output, `class.output="language-r"` should
 be removed from the `knitr` chunk options in the setup chunk. Instead, the `"language-r"` portion
 should be incorporated by including the following code snippet in the setup chunk:
@@ -96,8 +98,6 @@ old_hooks <- fansi::set_knit_hooks(
   class = sprintf("fansi fansi-%s language-r", c("output", "message", "warning", "error"))
 )
 ```
-
-[Example code](https://github.com/adamoshen/prismr/blob/main/docs/dark-theme-fansi/index.Rmd)
 
 # Usage - `xaringan` slides
 
