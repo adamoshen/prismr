@@ -97,6 +97,8 @@ old_hooks <- fansi::set_knit_hooks(
   which = c("output", "message", "warning", "error"),
   class = sprintf("fansi fansi-%s language-r", c("output", "message", "warning", "error"))
 )
+
+options(crayon.enabled=TRUE)
 ```
 
 # Usage - `xaringan` slides
