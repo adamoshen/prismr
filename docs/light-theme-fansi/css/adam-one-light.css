@@ -6,8 +6,9 @@
   --pink: #e83e8c;
   --orange: #de935f;
   --tan: #ede2a4;
-  --text-col: #abb2bf;
-  --bg-col: #282c34;
+  --brown: #8f5902;
+  --text-col: #383a42;
+  --bg-col: #fafafa;
 }
 
 code[class*="language-"],
@@ -54,7 +55,7 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: var(--tan);
+  color: var(--brown);
 }
 
 .token.punctuation {

@@ -1,13 +1,13 @@
 ---
 title: "Using PrismJS with RMarkdown"
-subtitle: "Highlight theme: Adam One Dark; with fansi knit hooks"
+subtitle: "Highlight theme: Adam One Light; with fansi knit hooks"
 author: "Adam Shen"
 output:
   html_document:
     highlight: null
     math_method: null
-    theme: darkly
-    css: css/adam-one-dark.css
+    theme: flatly
+    css: css/adam-one-light.css
     includes:
       in_header: utils/header.html
     md_extensions: -smart
@@ -32,9 +32,11 @@ options(crayon.enabled=TRUE)
 
 **The code in this section is evaluated.**
 
-```{r, eval=TRUE}
+```{r, eval=TRUE, message=TRUE}
 library(tidyverse)
+```
 
+```{r, eval=TRUE}
 new_penguins <- palmerpenguins::penguins %>%
   drop_na() %>%
   group_by(species, island) %>%
