@@ -18,7 +18,7 @@
 
 [Adam One Dark](dark-theme/)
 
-[Adam One Dark with fansi knit hooks](dark-theme-fansi/)
+[Adam One Light with fansi knit hooks](light-theme-fansi/)
 
 [Adam Light](light-theme/)
 
