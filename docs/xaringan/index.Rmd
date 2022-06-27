@@ -28,24 +28,11 @@ htmltools::tagList(
   )
 )
 
-old_hooks <- fansi::set_knit_hooks(knitr::knit_hooks)
-
-styles <- c(
-  getOption('fansi.style'),  # default style
-  "PRE.fansi CODE {background-color: transparent;}",
-  "PRE.fansi-error {background-color: transparent;}",
-  "PRE.fansi-warning {background-color: transparent;}",
-  "PRE.fansi-message {background-color: transparent;}"
+old_hooks <- fansi::set_knit_hooks(
+  knitr::knit_hooks,
+  which = c("output", "message", "warning", "error")
 )
 
-old.hooks <- c(
-  old_hooks,
-  fansi::set_knit_hooks(
-    knitr::knit_hooks,
-    which=c('warning', 'error', 'message'),
-    style=styles
-  )
-)
 
 options(crayon.enabled=TRUE)
 ```
