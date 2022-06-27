@@ -83,6 +83,22 @@ the definitions supplied in `utils/prismr.js`. Hightlighting can be disabled on
 a per-chunk basis by supplying the chunk options
 `class.source="language-none"` or `class.output="language-none"`.
 
+## Usage with `fansi` knit hooks
+
+To allow both `prismr` and `fansi` to highlight in chunk output, `class.output="language-r"` should
+be removed from the `knitr` chunk options in the setup chunk. Instead, the `"language-r"` portion
+should be incorporated by including the following code snippet in the setup chunk:
+
+```r
+old_hooks <- fansi::set_knit_hooks(
+  knitr::knit_hooks,
+  which = c("output", "message", "warning", "error"),
+  class = sprintf("fansi fansi-%s language-r", c("output", "message", "warning", "error"))
+)
+```
+
+[Example code](https://github.com/adamoshen/prismr/blob/main/docs/dark-theme-fansi/index.Rmd)
+
 # Usage - `xaringan` slides
 
 [Example code](https://github.com/adamoshen/prismr/blob/main/docs/xaringan/index.Rmd)
