@@ -118,6 +118,8 @@ class, e.g. `class: center, inverse, language-r`.
 - [x] `knitr` chunk options `class.source` and `class.output` do not need to be
 modified.
 
+Known limitations: [(1)](https://github.com/adamoshen/prismr/issues/2)
+
 # Support for other languages
 
 As PrismJS supports many languages, the `utils/prismr.js` file can be modified
