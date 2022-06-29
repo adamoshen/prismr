@@ -14,7 +14,7 @@
 code[class*="language-"],
 pre[class*="language-"] {
   color: var(--text-col);
-  font-family: 'IBM Plex Mono', Consolas, Monaco, Courier, monospace;
+  /* font-family: 'IBM Plex Mono', Consolas, Monaco, Courier, monospace; */
   direction: ltr;
   text-align: left;
   white-space: pre;
