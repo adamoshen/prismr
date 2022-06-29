@@ -118,11 +118,6 @@ class, e.g. `class: center, inverse, language-r`.
 - [x] `knitr` chunk options `class.source` and `class.output` do not need to be
 modified.
 
-It should be noted that the monospace font is defined once in the corresponding
-Prism css file, and once again in the presentation css file. In the included example,
-the font definition in the Prism css file takes precendence, so this should either
-be removed or modified to match the monospace font defined for the presentation.
-
 # Support for other languages
 
 As PrismJS supports many languages, the `utils/prismr.js` file can be modified
