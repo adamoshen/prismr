@@ -1,5 +1,5 @@
 ---
-title: "This is a title"
+title: "Using PrismJS with {xaringan}"
 author: "Adam Shen"
 output:
   xaringan::moon_reader:
@@ -37,13 +37,24 @@ old_hooks <- fansi::set_knit_hooks(
 options(crayon.enabled=TRUE)
 ```
 
-class: title-slide, center
+count: false
+class: title-slide, center, middle
 
-# This is the title slide
+# Using PrismJS with {`xaringan`} via `prismr`
 
-## Some subtitle
+.pull-left[
 
-By: Adam Shen
+`r fontawesome::fa("code-branch")` [`prismr` (Github repo)](github.com/adamoshen/prismr)
+
+]
+
+.pull-right[
+
+`r fontawesome::fa("github")` [@adamoshen](github.com/adamoshen)
+
+`r fontawesome::fa("twitter")` [@adamoshen](twitter.com/adamoshen)
+
+]
 
 ---
 
@@ -53,6 +64,16 @@ class: language-r
 
 ```{r, message=TRUE}
 library(tidyverse)
+```
+
+---
+
+class: language-r
+
+# PrismJS works with `fansi` knit hooks
+
+```{r}
+tidyverse_logo()
 ```
 
 ---
@@ -73,3 +94,127 @@ new_penguins <- palmerpenguins::penguins %>%
 new_penguins
 ```
 
+---
+
+# Highlighting code inline without defining a slide class
+
+You can also highlight inline code using the usual dot-classes, with the class being "language-r".
+
+So I thought I'd use .language-r[`dplyr::group_by()`] followed by .language-r[`dplyr::mutate()`].
+Of course, afterward I would also .language-r[`dplyr::ungroup()`].
+
+You can also use the class "language-none" to disable highlighting of inline code.
+
+So I thought I'd use .language-none[`dplyr::group_by()`] followed by .language-none[`dplyr::mutate()`].
+Of course, afterward I would also .language-none[`dplyr::ungroup()`].
+
+---
+
+# You may be interested in using the `layout` feature
+
+Recall that you can define slide classes for all subsequent slides using `layout`. As usual, you
+can also combine classes together.
+
+```
+class: center, inverse, language-r
+layout: true
+```
+
+Read more about slide layouts
+[`r fontawesome::fa("external-link-alt")`](https://github.com/yihui/xaringan/wiki/Slide-layouts).
+
+---
+
+class: language-r
+
+# Limitations
+
+One known limitation is that adding comments will highlight the remainder of the chunk as a comment
+[`r fontawesome::fa("external-link-alt")`](https://github.com/adamoshen/prismr/issues/2).
+
+```{r, eval=FALSE}
+1 + 2
+
+# Everything past this point will be highlighted as a comment
+mean(c(1, 4, 5, 6))
+data(starwars, package="dplyr")
+```
+
+Solutions:
+
+- Only include comments on the last line, or adjacent to the last line of code
+- Don't include comments in your code chunk
+- Start a new code chunk after commenting
+- Use plain text on the slide to explain your code
+- Line highlighting still works though (see next slide)
+
+---
+
+class: language-r
+
+# This is something complicated
+
+.pull-left[
+
+```{r, eval=FALSE}
+ggplot(
+  mpg, #<<
+  
+  aes(x = displ, y = hwy, colour = class)
+) +
+  geom_point()
+```
+
+]
+
+.pull-right[
+
+Construct a plot using the .language-none[`mpg`] data set.
+
+]
+
+--
+
+.pull-left[
+
+```{r, eval=FALSE}
+ggplot(
+  mpg,
+  
+  aes(x = displ, y = hwy, colour = class) #<<
+) +
+  geom_point()
+```
+
+]
+
+.pull-right[
+
+The x-axis will represent engine displacement.
+
+The y-axis will represent highway miles per gallon.
+
+Geoms will be coloured by type of vehicle
+
+]
+
+--
+
+.pull-left[
+
+```{r, eval=FALSE}
+ggplot(
+  mpg,
+  
+  aes(x = displ, y = hwy, colour = class)
+) +
+  geom_point() #<<
+```
+
+]
+
+.pull-right[
+
+Draw points on the canvas.
+
+]
