@@ -44,15 +44,15 @@ class: title-slide, center, middle
 
 .pull-left[
 
-`r fontawesome::fa("code-branch")` [`prismr` (Github repo)](github.com/adamoshen/prismr)
+`r fontawesome::fa("code-branch")` [`prismr` (Github repo)](https://github.com/adamoshen/prismr)
 
 ]
 
 .pull-right[
 
-`r fontawesome::fa("github")` [@adamoshen](github.com/adamoshen)
+`r fontawesome::fa("github")` [@adamoshen](https://github.com/adamoshen)
 
-`r fontawesome::fa("twitter")` [@adamoshen](twitter.com/adamoshen)
+`r fontawesome::fa("twitter")` [@adamoshen](https://twitter.com/adamoshen)
 
 ]
 
